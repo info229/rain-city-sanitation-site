@@ -1,0 +1,6 @@
+node_modules
+.next
+.env.local
+Vida_Health_Bar_Passive_Security_Review.docx
+generate_security_report.py
+docs/

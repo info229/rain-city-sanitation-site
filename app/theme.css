@@ -1,0 +1,20 @@
+:root {
+  /* Update these brand values if Rain City Sanitation provides exact hex colors later. */
+  --color-brand: 24 174 233;
+  --color-brand-dark: 10 27 50;
+  --color-brand-soft: 232 246 255;
+  --color-accent: 82 201 255;
+  --color-canvas: 244 248 251;
+  --color-surface: 255 255 255;
+  --color-surface-strong: 236 243 248;
+  --color-ink: 16 24 32;
+  --color-muted: 88 101 114;
+  --color-line: 213 225 234;
+
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  --shadow-card: 0 16px 40px rgba(13, 24, 33, 0.08);
+  --shadow-lift: 0 22px 60px rgba(8, 21, 29, 0.16);
+}
