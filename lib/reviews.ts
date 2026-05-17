@@ -32,6 +32,8 @@ export async function getReviews(): Promise<{
   }
 
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 3500);
     const response = await fetch(`https://places.googleapis.com/v1/places/${placeId}`, {
       headers: {
         "Content-Type": "application/json",
@@ -39,8 +41,9 @@ export async function getReviews(): Promise<{
         "X-Goog-FieldMask":
           "displayName,rating,userRatingCount,reviews.text.text,reviews.rating,reviews.relativePublishTimeDescription,reviews.authorAttribution.displayName",
       },
+      signal: controller.signal,
       next: { revalidate: 3600 },
-    });
+    }).finally(() => clearTimeout(timeout));
 
     if (!response.ok) {
       throw new Error(`Google reviews request failed with ${response.status}`);
